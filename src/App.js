@@ -3,7 +3,13 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-   <h1>enter your assiment subject ;</h1> 
+    <div className='nav'> 
+      
+      <button className="btn" >add </button>
+      <button className="btn">view </button>
+    
+    
+    </div>
     </div>
   );
 }
