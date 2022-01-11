@@ -13,6 +13,48 @@
   border: solid white 3px;
   border-radius: 7px;
 }
+
+.txt{
+  display: block;
+   font-size: 25px;
+   width: max-width;
+   color: #FFC928;
+   padding-right: 20px;
+
+   
+}
+
+.sbox{
+margin: 20px;
+
+
+
+}
+
+.inp{
+    margin: 5px;
+    height: 30px;
+    border: solid rgb(255, 255, 255) 2px;
+    border-radius: 7px;
+    max-width:300px;
+    background: transparent;
+    color: aliceblue;
+    font-size: 20px;
+    
+
+
+}
+
+
+.box{
+     color: rgb(255, 255, 255);
+     font-weight: bold;
+     border: solid white 4px;
+     border-radius: 7px;
+     padding-left: 30px;
+     margin-top: 20px;
+}
+
 .btn {
   display: inline-block;
   text-align: center;

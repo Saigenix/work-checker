@@ -1,6 +1,6 @@
 import './App.css';
 
-function App() {
+function Navbar() {
   return (
     <div className="App">
     <div className='nav'> 
@@ -14,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default Navbar;
