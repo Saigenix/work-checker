@@ -3,8 +3,7 @@ import './App.css';
 function Navbar() {
   return (
     <>
-
-     <div className="nav">
+  <div className="nav">
   <input type="checkbox" id="nav-check"/>
   <div className="nav-header">
     <div className="nav-title">
@@ -23,7 +22,6 @@ function Navbar() {
   <a href="/#" >Login/sign-up</a>
     <a href="/#" >About us</a>
     <a href="/#" >Contact us</a>
-    
     <a href="/#" >Privacy policy</a>
     <a href="/#" >More tools</a>
   </div>
