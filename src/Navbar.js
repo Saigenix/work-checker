@@ -1,6 +1,14 @@
 import './App.css';
+import { useState } from 'react';
+import Add from './Add';
+import Data from './Data';
+
 
 function Navbar() {
+  let [istrue , Setisure] = useState(false);
+ 
+
+
   return (
     <>
   <div className="nav">
@@ -23,17 +31,17 @@ function Navbar() {
     <a href="/#" >About us</a>
     <a href="/#" >Contact us</a>
     <a href="/#" >Privacy policy</a>
-    <a href="/#" >More tools</a>
+    <a href="/#" >More Tools</a>
   </div>
 </div>
     
       <div className='navn'> 
-      <button className="btn" >add </button>
-      <button className="btn">view </button>
+      <button className="btn" onClick={()=> Setisure(false)}  >add </button>
+      <button className="btn" onClick={()=> Setisure(true)}>view </button>
       </div>
-    
-    </>
-  );
-}
+   
+    {istrue === false ? <Add/> : <Data/>}
+  </>
+  );}
 
 export default Navbar;
