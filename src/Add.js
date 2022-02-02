@@ -6,10 +6,12 @@ function Add() {
     const [date1 , setdate1] = useState("");
     const [inputsub, setInputsub] = useState('');
     const [inputwork, setInputwork] = useState('');
-    const [inputdate, setInputdate] = useState('');
-    const [inputdate2, setInputdate2] = useState(date1);
-    const [inputtime, setInputtime] = useState(date1);
+    const [inputdate, setInputdate] = useState("null");
+    const [inputdate2, setInputdate2] = useState("null");
+    const [inputtime, setInputtime] = useState("15:00");
     const [inputcheck, setInputcheck] = useState(false);
+    // const [list , setlist] = useState(["s", "a", "i", "0"]);
+   // const [val , setval] = useState("sai0");
     useEffect(() => {
         setdate1(today());
        
@@ -46,10 +48,21 @@ function Add() {
         inputcheck?setInputcheck(!inputcheck):setInputcheck(inputcheck);
 
     }
+    
+    let i;
+    localStorage.getItem("i")===null? i="0": i= parseInt(localStorage.getItem("i"));
+    let list;
+    localStorage.getItem("list")===null? list=[]: list= JSON.parse(localStorage.getItem("list"));
     const save = () => {
-        localStorage.setItem("sai" , JSON.stringify(data));
+        i++;
+        let val = "sai"+i ;
+        localStorage.setItem((val) , JSON.stringify(data));
+        localStorage.setItem("i", i);
+        list.push(val);
+        localStorage.setItem("list", JSON.stringify(list));
         alert("data saved successfully!");
         reset();
+        
 }
 
     return (
@@ -58,7 +71,7 @@ function Add() {
            <span className='txt'>📗Subject of your work :</span>
            <input  className="inp" type="text" name="sub" id="sub" placeholder="Enter here" value={inputsub} onInput={e => setInputsub(e.target.value)} />
            <span className='txt'>🔔your work :</span>
-           <input  className="inp" type="text" name="sub" id="work" placeholder='Enter here' value={inputwork} onInput={e => setInputwork(e.target.value)} />
+           <textarea  className="inp" style={{height: "120px"}} type="text" name="sub" id="work" placeholder='Enter here' value={inputwork} onInput={e => setInputwork(e.target.value)} />
            <span className='txt'>📅Due date :</span>
            <input  className="inp" type="date" name="sub" id="duedate" defaultValue ={date1} onInput={e => setInputdate(e.target.value)} />
            <span className='txt'> 📅date and time on which you want to complete :</span>

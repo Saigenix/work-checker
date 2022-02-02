@@ -1,12 +1,13 @@
 import './App.css';
 import { useState } from 'react';
 import Add from './Add';
-import Data from './Data';
-
+import View from './View';
 
 function Navbar() {
   let [istrue , Setisure] = useState(false);
- 
+  const data = JSON.parse( localStorage.getItem("sai1"));
+  let i = localStorage.getItem("i");
+  console.log(data);
 
 
   return (
@@ -40,8 +41,9 @@ function Navbar() {
       <button className="btn" onClick={()=> Setisure(true)}>view </button>
       </div>
    
-    {istrue === false ? <Add/> : <Data/>}
-  </>
+     {istrue === false ? <Add/>: <View data={data}  i={i}/> } 
+      
+           </>
   );}
 
 export default Navbar;
