@@ -43,8 +43,8 @@ function Navbar() {
       <button className="btn" onClick={()=> Setisure(false)}>add </button>
       <button className="btn" onClick={()=> Setisure(true)}> view </button>
       </div>
-   
-     {istrue || tt==="sai"? <View/>: <Add/> } 
+     
+     {istrue? <View/>: <Add/> } 
       
            </>
   );}
