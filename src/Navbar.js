@@ -4,10 +4,13 @@ import Add from './Add';
 import View from './View';
 
 function Navbar() {
-  let [istrue , Setisure] = useState(false);
-  const data = JSON.parse( localStorage.getItem("sai1"));
-  let i = localStorage.getItem("i");
-  console.log(data);
+  const [istrue , Setisure] = useState(false);
+  const tt = localStorage.getItem("no")
+  if (tt === "sai") {
+    Setisure(false);
+    console.log(tt);
+    localStorage.removeItem("no");
+  }
 
 
   return (
@@ -37,11 +40,11 @@ function Navbar() {
 </div>
     
       <div className='navn'> 
-      <button className="btn" onClick={()=> Setisure(false)}  >add </button>
-      <button className="btn" onClick={()=> Setisure(true)}>view </button>
+      <button className="btn" onClick={()=> Setisure(false)}>add </button>
+      <button className="btn" onClick={()=> Setisure(true)}> view </button>
       </div>
    
-     {istrue === false ? <Add/>: <View data={data}  i={i}/> } 
+     {istrue || tt==="sai"? <View/>: <Add/> } 
       
            </>
   );}
