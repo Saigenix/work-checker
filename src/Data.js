@@ -17,7 +17,7 @@ const Data = (props) => {
     localStorage.setItem("list",JSON.stringify(list));
     // setlistup(list);
     localStorage.setItem("no","sai");
-    alert("work delected!")
+    alert("work deleted!")
     window.location.reload(false);
   } 
   return (
@@ -35,7 +35,7 @@ const Data = (props) => {
            <span className='txt'>Mark completed !</span>
            </div>
            <div className='sbox'>
-           <button className="btn" id = {props.i} onClick= {delect} > Delect </button>
+           <button className="btn" id = {props.i} onClick= {delect} > Delete </button>
            </div>
            </div>
 
