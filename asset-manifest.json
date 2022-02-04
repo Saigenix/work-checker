@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/work-checker/static/css/main.b0e915af.css",
-    "main.js": "/work-checker/static/js/main.43946c5b.js",
+    "main.js": "/work-checker/static/js/main.dd9a0518.js",
     "index.html": "/work-checker/index.html",
     "main.b0e915af.css.map": "/work-checker/static/css/main.b0e915af.css.map",
-    "main.43946c5b.js.map": "/work-checker/static/js/main.43946c5b.js.map"
+    "main.dd9a0518.js.map": "/work-checker/static/js/main.dd9a0518.js.map"
   },
   "entrypoints": [
     "static/css/main.b0e915af.css",
-    "static/js/main.43946c5b.js"
+    "static/js/main.dd9a0518.js"
   ]
 }
