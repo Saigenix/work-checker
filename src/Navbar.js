@@ -1,7 +1,8 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Add from './Add';
 import View from './View';
+import OneSignal from 'react-onesignal';
 
 function Navbar() {
   const [istrue , Setisure] = useState(false);
@@ -11,6 +12,12 @@ function Navbar() {
     console.log(tt);
     localStorage.removeItem("no");
   }
+
+  useEffect(() => {
+    OneSignal.init({
+      appId: "aad111a1-15b1-4185-a9b5-1fc32cf6ae34"
+    });
+  }, []);
 
 
   return (
