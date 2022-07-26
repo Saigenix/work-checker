@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Add from './Add';
 import View from './View';
 import OneSignal from 'react-onesignal';
+import toast, { Toaster } from 'react-hot-toast';
 
 function Navbar() {
   const [istrue , Setisure] = useState(false);
@@ -22,6 +23,7 @@ function Navbar() {
 
   return (
     <>
+    <Toaster />
   <div className="nav">
   <input type="checkbox" id="nav-check"/>
   <div className="nav-header">

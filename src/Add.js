@@ -1,13 +1,14 @@
 import React from 'react';
 import { useState , useEffect } from 'react';
+import toast from 'react-hot-toast';
 import './App.css';
 
 function Add() {
     const [date1 , setdate1] = useState("");
     const [inputsub, setInputsub] = useState('');
     const [inputwork, setInputwork] = useState('');
-    const [inputdate, setInputdate] = useState("null");
-    const [inputdate2, setInputdate2] = useState("null");
+    const [inputdate, setInputdate] = useState(date1);
+    const [inputdate2, setInputdate2] = useState(date1);
     const [inputtime, setInputtime] = useState("15:00");
     const [inputcheck, setInputcheck] = useState(false);
     // const [list , setlist] = useState(["s", "a", "i", "0"]);
@@ -46,6 +47,7 @@ function Add() {
         setInputsub("");
         setInputwork("");
         inputcheck?setInputcheck(!inputcheck):setInputcheck(inputcheck);
+        toast.success("data Reset successfully!");
 
     }
     
@@ -54,13 +56,17 @@ function Add() {
     let list;
     localStorage.getItem("list")===null? list=[]: list= JSON.parse(localStorage.getItem("list"));
     const save = () => {
+        if (inputsub === "" || inputwork === "") {
+            toast.error("Please fill all the fields");
+            return;
+        }
         i++;
         let val = "sai"+i ;
         localStorage.setItem((val) , JSON.stringify(data));
         localStorage.setItem("i", i);
         list.push(val);
         localStorage.setItem("list", JSON.stringify(list));
-        alert("data saved successfully!");
+        toast.success("data saved successfully!");
         reset();
         
 }
@@ -70,11 +76,11 @@ function Add() {
         <div className='box'>
            <span className='txt'>📗Subject of your work :</span>
            <input  className="inp" type="text" name="sub" id="sub" placeholder="Enter here" value={inputsub} onInput={e => setInputsub(e.target.value)} />
-           <span className='txt'>🔔your work :</span>
+           <span className='txt'>🔔Your work :</span>
            <textarea  className="inp" style={{height: "120px"}} type="text" name="sub" id="work" placeholder='Enter here' value={inputwork} onInput={e => setInputwork(e.target.value)} />
            <span className='txt'>📅Due date :</span>
            <input  className="inp" type="date" name="sub" id="duedate" defaultValue ={date1} onInput={e => setInputdate(e.target.value)} />
-           <span className='txt'> 📅date and time on which you want to complete :</span>
+           <span className='txt'> 📅Date and time on which you want to complete :</span>
            <input  className="inp" type="date" name="sub" id="comdate" defaultValue ={date1} onInput={e => setInputdate2(e.target.value)} />
            <br />
            <input className='inp' type="time" name="time" id="time" defaultValue="12:00" onInput={e => setInputtime(e.target.value)} />
