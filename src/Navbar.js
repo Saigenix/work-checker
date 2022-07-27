@@ -2,7 +2,6 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import Add from './Add';
 import View from './View';
-import OneSignal from 'react-onesignal';
 import toast, { Toaster } from 'react-hot-toast';
 
 function Navbar() {
@@ -13,12 +12,6 @@ function Navbar() {
     console.log(tt);
     localStorage.removeItem("no");
   }
-
-  useEffect(() => {
-    OneSignal.init({
-      appId: "aad111a1-15b1-4185-a9b5-1fc32cf6ae34"
-    });
-  }, []);
 
 
   return (
